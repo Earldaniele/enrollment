@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCST Enrollment System - Summary</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        .card {
+            margin-bottom: 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+            font-weight: bold;
+        }
+        .user-role {
+            background-color: #e9ecef;
+            border-radius: 0.25rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        .feature-list i {
+            color: #28a745;
+            margin-right: 0.5rem;
+        }
+        .module-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #007bff;
+        }
+        .workflow-step {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        .workflow-step:before {
+            content: "";
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: #dee2e6;
+        }
+        .workflow-step:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            height: 1rem;
+            width: 1rem;
+            border-radius: 50%;
+            background-color: #007bff;
+        }
+        .workflow-step:last-child:before {
+            height: 0.5rem;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="fw-bold">NCST Enrollment System</h1>
+                    <p class="lead mb-0">System Summary & Documentation - August 15, 2023</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <img src="assets/images/logo-placeholder.png" alt="NCST Logo" height="80" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="fw-bold mb-3">System Overview</h2>
+                        <p>The NCST Enrollment System is a comprehensive web-based application designed to streamline the student enrollment process. The system caters to different user roles including students, registrars, evaluators, and student assistants, providing a centralized platform for managing applications, document submissions, course registrations, and fee assessments.</p>
+                        
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <strong>Current Version:</strong> 1.0.0 (Development Phase)
+                            <div class="mt-2"><strong>Last Updated:</strong> UI improvements to registration forms and application review workflows</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3 class="mb-0">System Architecture</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                            <i class="bi bi-diagram-3 module-icon"></i>
+                        </div>
+                        <h4>Technology Stack</h4>
+                        <ul>
+                            <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, Bootstrap 5</li>
+                            <li><strong>Backend:</strong> PHP 8.0+</li>
+                            <li><strong>Database:</strong> MySQL</li>
+                            <li><strong>Server:</strong> Apache (XAMPP)</li>
+                            <li><strong>Additional Libraries:</strong> SweetAlert2, Bootstrap Icons</li>
+                        </ul>
+                        
+                        <h4 class="mt-4">Directory Structure</h4>
+                        <ul>
+                            <li><strong>/action/</strong> - Backend PHP scripts and database interactions</li>
+                            <li><strong>/assets/</strong> - Static files (CSS, JS, images, JSON data)</li>
+                            <li><strong>/frontend/</strong> - UI components organized by user roles</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3 class="mb-0">User Roles & Access</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="user-role">
+                            <h4><i class="bi bi-person-badge me-2"></i>Student</h4>
+                            <p>End users who apply for enrollment, submit documents, and track application status.</p>
+                            <div class="badge bg-primary">Registration</div>
+                            <div class="badge bg-primary">Document Submission</div>
+                            <div class="badge bg-primary">Application Tracking</div>
+                        </div>
+                        
+                        <div class="user-role">
+                            <h4><i class="bi bi-person-workspace me-2"></i>Registrar</h4>
+                            <p>Staff who review and process student applications, validate documents, and approve enrollments.</p>
+                            <div class="badge bg-success">Application Review</div>
+                            <div class="badge bg-success">Document Validation</div>
+                            <div class="badge bg-success">Enrollment Approval</div>
+                            <div class="badge bg-danger">Application Rejection</div>
+                        </div>
+                        
+                        <div class="user-role">
+                            <h4><i class="bi bi-clipboard-check me-2"></i>Evaluator</h4>
+                            <p>Academic personnel who evaluate student qualifications and approve course registrations.</p>
+                            <div class="badge bg-info">Academic Evaluation</div>
+                            <div class="badge bg-info">Course Approval</div>
+                        </div>
+                        
+                        <div class="user-role">
+                            <h4><i class="bi bi-people me-2"></i>Student Assistant</h4>
+                            <p>Support staff who help manage queues and provide initial screening of applications.</p>
+                            <div class="badge bg-warning text-dark">Queue Management</div>
+                            <div class="badge bg-warning text-dark">Initial Screening</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="mb-0">Key System Modules</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="bi bi-person-plus module-icon"></i>
+                                    <h4>Registration & Application</h4>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="bi bi-check-circle"></i> Online student registration</li>
+                                    <li><i class="bi bi-check-circle"></i> Document upload functionality</li>
+                                    <li><i class="bi bi-check-circle"></i> Application status tracking</li>
+                                    <li><i class="bi bi-check-circle"></i> Student profile management</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="bi bi-file-earmark-text module-icon"></i>
+                                    <h4>Document Management</h4>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="bi bi-check-circle"></i> Document requirement tracking</li>
+                                    <li><i class="bi bi-check-circle"></i> Verification workflow</li>
+                                    <li><i class="bi bi-check-circle"></i> Automatic completion percentage</li>
+                                    <li><i class="bi bi-check-circle"></i> Document status updates</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="bi bi-calendar2-check module-icon"></i>
+                                    <h4>Class Scheduling</h4>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="bi bi-check-circle"></i> Course catalog management</li>
+                                    <li><i class="bi bi-check-circle"></i> Class schedule generation</li>
+                                    <li><i class="bi bi-check-circle"></i> Section assignment</li>
+                                    <li><i class="bi bi-check-circle"></i> Room and instructor allocation</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="bi bi-cash-stack module-icon"></i>
+                                    <h4>Fee Assessment</h4>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="bi bi-check-circle"></i> Tuition and fee calculation</li>
+                                    <li><i class="bi bi-check-circle"></i> Payment options (Cash/Installment)</li>
+                                    <li><i class="bi bi-check-circle"></i> Fee breakdown display</li>
+                                    <li><i class="bi bi-check-circle"></i> Receipt generation</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="bi bi-bell module-icon"></i>
+                                    <h4>Notification System</h4>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="bi bi-check-circle"></i> Status update notifications</li>
+                                    <li><i class="bi bi-check-circle"></i> Document request alerts</li>
+                                    <li><i class="bi bi-check-circle"></i> Queue management notifications</li>
+                                    <li><i class="bi bi-check-circle"></i> Deadline reminders</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="bi bi-people-fill module-icon"></i>
+                                    <h4>Queue Management</h4>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="bi bi-check-circle"></i> Virtual queue system</li>
+                                    <li><i class="bi bi-check-circle"></i> Real-time queue status</li>
+                                    <li><i class="bi bi-check-circle"></i> Queue analytics</li>
+                                    <li><i class="bi bi-check-circle"></i> Priority queue handling</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="bi bi-layout-text-window module-icon"></i>
+                                    <h4>User Interface</h4>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="bi bi-check-circle"></i> Responsive form layouts</li>
+                                    <li><i class="bi bi-check-circle"></i> Optimized registration details</li>
+                                    <li><i class="bi bi-check-circle"></i> Clean assessment display</li>
+                                    <li><i class="bi bi-check-circle"></i> Feedback modals and workflows</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3 class="mb-0">Student Enrollment Workflow</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="workflow-step">
+                            <h5>1. Student Registration</h5>
+                            <p>Students create an account and submit personal information to initiate the enrollment process.</p>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <h5>2. Document Submission</h5>
+                            <p>Students upload required documents based on their student type (new, old, transferee, or shifting).</p>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <h5>3. Queue Assignment</h5>
+                            <p>Students are assigned to a virtual queue for processing by student assistants and registrars.</p>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <h5>4. Document Verification</h5>
+                            <p>Registrars validate submitted documents and mark them as complete or request additional information.</p>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <h5>5. Application Review</h5>
+                            <p>Registrars review the complete application and either approve for enrollment or reject with a detailed reason.</p>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <h5>6. Course Registration</h5>
+                            <p>Students select courses based on their program requirements and available schedules.</p>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <h5>6. Fee Assessment</h5>
+                            <p>The system calculates tuition and other applicable fees based on enrolled courses and student status.</p>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <h5>7. Payment Processing</h5>
+                            <p>Students select payment options (full payment or installment) and submit proof of payment.</p>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <h5>8. Enrollment Confirmation</h5>
+                            <p>Upon successful payment verification, enrollment is confirmed, and students receive their class schedules.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3 class="mb-0">Current Implementation Status</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="progress mb-4" style="height: 25px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75% Complete</div>
+                        </div>
+                        
+                        <h4>Completed Modules:</h4>
+                        <ul>
+                            <li><strong>User Authentication</strong> - Login/logout functionality for all user roles</li>
+                            <li><strong>Student Registration</strong> - Personal information collection and account creation</li>
+                            <li><strong>Document Management</strong> - Upload, categorization, and status tracking</li>
+                            <li><strong>Registrar Dashboard</strong> - Student list, details view, and document validation</li>
+                            <li><strong>Queue System</strong> - Virtual queue assignment and status monitoring</li>
+                            <li><strong>UI Improvements</strong> - Optimized registration forms and rejection workflows</li>
+                        </ul>
+                        
+                        <h4 class="mt-4">In Progress:</h4>
+                        <ul>
+                            <li><strong>Class Scheduling</strong> - Assignment of courses, sections, and instructors</li>
+                            <li><strong>Fee Assessment</strong> - Calculation of tuition and other fees</li>
+                            <li><strong>Notification System</strong> - Real-time alerts for status updates</li>
+                        </ul>
+                        
+                        <h4 class="mt-4">Pending Implementation:</h4>
+                        <ul>
+                            <li><strong>Payment Processing</strong> - Integration with payment systems</li>
+                            <li><strong>Reporting</strong> - Analytics and administrative reports</li>
+                            <li><strong>Mobile Responsiveness</strong> - Optimizing for all device sizes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="mb-0">Database Structure</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>The system uses a relational database with the following core tables:</p>
+                        
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">students</h5>
+                                        <p class="card-text">Stores student personal and academic information</p>
+                                        <ul class="small">
+                                            <li>id (Primary Key)</li>
+                                            <li>first_name</li>
+                                            <li>last_name</li>
+                                            <li>email</li>
+                                            <li>contact</li>
+                                            <li>address</li>
+                                            <li>type (new, old, transferee, shifting)</li>
+                                            <li>course</li>
+                                            <li>year_level</li>
+                                            <li>created_at</li>
+                                            <li>updated_at</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">documents</h5>
+                                        <p class="card-text">Tracks student document submissions</p>
+                                        <ul class="small">
+                                            <li>id (Primary Key)</li>
+                                            <li>student_id (Foreign Key)</li>
+                                            <li>name</li>
+                                            <li>type</li>
+                                            <li>file_path</li>
+                                            <li>status (Submitted, Pending, Missing)</li>
+                                            <li>date_submitted</li>
+                                            <li>verified_by</li>
+                                            <li>verification_date</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">enrollments</h5>
+                                        <p class="card-text">Records student enrollment details</p>
+                                        <ul class="small">
+                                            <li>id (Primary Key)</li>
+                                            <li>student_id (Foreign Key)</li>
+                                            <li>semester</li>
+                                            <li>school_year</li>
+                                            <li>section</li>
+                                            <li>date_enrolled</li>
+                                            <li>status</li>
+                                            <li>approved_by</li>
+                                            <li>approval_date</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">courses</h5>
+                                        <p class="card-text">Catalog of available courses</p>
+                                        <ul class="small">
+                                            <li>id (Primary Key)</li>
+                                            <li>code</li>
+                                            <li>description</li>
+                                            <li>units</li>
+                                            <li>type (Lec, Lab)</li>
+                                            <li>prerequisites</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">class_schedules</h5>
+                                        <p class="card-text">Course schedules and sections</p>
+                                        <ul class="small">
+                                            <li>id (Primary Key)</li>
+                                            <li>course_id (Foreign Key)</li>
+                                            <li>section</li>
+                                            <li>days</li>
+                                            <li>start_time</li>
+                                            <li>end_time</li>
+                                            <li>room</li>
+                                            <li>instructor</li>
+                                            <li>max_students</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">fees</h5>
+                                        <p class="card-text">Tuition and other fee information</p>
+                                        <ul class="small">
+                                            <li>id (Primary Key)</li>
+                                            <li>enrollment_id (Foreign Key)</li>
+                                            <li>type</li>
+                                            <li>amount</li>
+                                            <li>description</li>
+                                            <li>payment_status</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>NCST Enrollment System</h5>
+                    <p class="small">Version 1.0.0 | Last Updated: August 15, 2023</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="small">&copy; 2023 NCST. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

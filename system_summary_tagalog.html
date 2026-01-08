@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCST Enrollment System - Buod</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+        .card {
+            margin-bottom: 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-header {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+            font-weight: bold;
+        }
+        .user-role {
+            background-color: #e9ecef;
+            border-radius: 0.25rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        .feature-list i {
+            color: #28a745;
+            margin-right: 0.5rem;
+        }
+        .module-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #007bff;
+        }
+        .workflow-step {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        .workflow-step:before {
+            content: "";
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: #dee2e6;
+        }
+        .workflow-step:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            height: 1rem;
+            width: 1rem;
+            border-radius: 50%;
+            background-color: #007bff;
+        }
+        .workflow-step:last-child:before {
+            height: 0.5rem;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="fw-bold">NCST Enrollment System</h1>
+                    <p class="lead mb-0">Buod ng Sistema at Dokumentasyon - Agosto 13, 2025</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <img src="assets/images/logo-placeholder.png" alt="NCST Logo" height="80" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="fw-bold mb-3">Pangkalahatang Impormasyon ng Sistema</h2>
+                        <p>Ang NCST Enrollment System ay isang komprehensibong web-based na aplikasyon na dinisenyo upang gawing mas mabilis at mas madali ang proseso ng pagpapatala ng mga estudyante. Ang sistema ay nagbibigay ng serbisyo sa iba't ibang gumagamit tulad ng mga estudyante, registrar, evaluator, at student assistant, na nagbibigay ng isang sentralisadong platform para sa pamamahala ng mga aplikasyon, pagpasa ng mga dokumento, pagpapatala sa kurso, at pagtatasa ng mga bayarin.</p>
+                        
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                            <strong>Kasalukuyang Bersyon:</strong> 1.0.0 (Nasa Development Phase pa)
+                            <div class="mt-2"><strong>Huling Update:</strong> Pagpapabuti ng interface ng registration forms at proseso ng pagsusuri ng aplikasyon</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3 class="mb-0">Istraktura ng Sistema</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                            <i class="bi bi-diagram-3 module-icon"></i>
+                        </div>
+                        <h4>Mga Teknolohiyang Ginamit</h4>
+                        <ul>
+                            <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, Bootstrap 5</li>
+                            <li><strong>Backend:</strong> PHP 8.0+</li>
+                            <li><strong>Database:</strong> MySQL</li>
+                            <li><strong>Server:</strong> Apache (XAMPP)</li>
+                            <li><strong>Karagdagang Libraries:</strong> SweetAlert2, Bootstrap Icons</li>
+                        </ul>
+                        
+                        <h4 class="mt-4">Istraktura ng Direktoryo</h4>
+                        <ul>
+                            <li><strong>/action/</strong> - Backend PHP scripts at interaksyon sa database</li>
+                            <li><strong>/assets/</strong> - Static files (CSS, JS, images, JSON data)</li>
+                            <li><strong>/frontend/</strong> - UI components na naka-organisa ayon sa role ng gumagamit</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3 class="mb-0">Mga Role ng User at Access</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="user-role">
+                            <h4><i class="bi bi-person-badge me-2"></i>Estudyante</h4>
+                            <p>Mga end users na nag-aaply para sa enrollment, nagsusumite ng mga dokumento, at sumusubaybay sa status ng kanilang aplikasyon.</p>
+                            <div class="badge bg-primary">Pagpaparehistro</div>
+                            <div class="badge bg-primary">Pagsumite ng Dokumento</div>
+                            <div class="badge bg-primary">Pagsubaybay ng Aplikasyon</div>
+                        </div>
+                        
+                        <div class="user-role">
+                            <h4><i class="bi bi-person-workspace me-2"></i>Registrar</h4>
+                            <p>Mga kawani na nagsusuri at nagpoproseso ng mga aplikasyon ng estudyante, nagbabalidasi ng mga dokumento, at nag-aapruba ng enrollment.</p>
+                            <div class="badge bg-success">Pagsusuri ng Aplikasyon</div>
+                            <div class="badge bg-success">Pagbabalidasi ng Dokumento</div>
+                            <div class="badge bg-success">Pag-apruba ng Enrollment</div>
+                            <div class="badge bg-danger">Pagtanggi ng Aplikasyon</div>
+                        </div>
+                        
+                        <div class="user-role">
+                            <h4><i class="bi bi-clipboard-check me-2"></i>Evaluator</h4>
+                            <p>Mga tauhan sa akademiko na nagsusuri ng kwalipikasyon ng estudyante at nag-aapruba ng mga kurso.</p>
+                            <div class="badge bg-info">Pagsusuri ng Akademiko</div>
+                            <div class="badge bg-info">Pag-apruba ng Kurso</div>
+                        </div>
+                        
+                        <div class="user-role">
+                            <h4><i class="bi bi-people me-2"></i>Student Assistant</h4>
+                            <p>Mga kawaning tumutulong sa pamamahala ng pila at nagbibigay ng paunang pagsusuri ng mga aplikasyon.</p>
+                            <div class="badge bg-warning text-dark">Pamamahala ng Pila</div>
+                            <div class="badge bg-warning text-dark">Paunang Pagsusuri</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="mb-0">Mahahalagang Bahagi ng Sistema</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="bi bi-person-plus module-icon"></i>
+                                    <h4>Pagpaparehistro at Aplikasyon</h4>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="bi bi-check-circle"></i> Online na pagpaparehistro ng estudyante</li>
+                                    <li><i class="bi bi-check-circle"></i> Pag-upload ng dokumento</li>
+                                    <li><i class="bi bi-check-circle"></i> Pagsubaybay sa status ng aplikasyon</li>
+                                    <li><i class="bi bi-check-circle"></i> Pamamahala ng profile ng estudyante</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="bi bi-file-earmark-text module-icon"></i>
+                                    <h4>Pamamahala ng Dokumento</h4>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="bi bi-check-circle"></i> Pagsubaybay sa mga kinakailangang dokumento</li>
+                                    <li><i class="bi bi-check-circle"></i> Proseso ng pagbeberipika</li>
+                                    <li><i class="bi bi-check-circle"></i> Awtomatikong pagkalkula ng porsyento ng pagkumpleto</li>
+                                    <li><i class="bi bi-check-circle"></i> Pag-update ng status ng dokumento</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="bi bi-calendar2-check module-icon"></i>
+                                    <h4>Pag-iskedyul ng Klase</h4>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="bi bi-check-circle"></i> Pamamahala ng listahan ng kurso</li>
+                                    <li><i class="bi bi-check-circle"></i> Paggawa ng iskedyul ng klase</li>
+                                    <li><i class="bi bi-check-circle"></i> Pag-assign ng section</li>
+                                    <li><i class="bi bi-check-circle"></i> Pagtatalaga ng silid at guro</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="bi bi-cash-stack module-icon"></i>
+                                    <h4>Pagtatasa ng Bayarin</h4>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="bi bi-check-circle"></i> Pagkalkula ng tuition at bayarin</li>
+                                    <li><i class="bi bi-check-circle"></i> Opsyon sa pagbabayad (Cash/Installment)</li>
+                                    <li><i class="bi bi-check-circle"></i> Pagpapakita ng breakdown ng bayarin</li>
+                                    <li><i class="bi bi-check-circle"></i> Paggawa ng resibo</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="bi bi-bell module-icon"></i>
+                                    <h4>Sistema ng Notification</h4>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="bi bi-check-circle"></i> Mga notification para sa update ng status</li>
+                                    <li><i class="bi bi-check-circle"></i> Mga alerto para sa kahilingan ng dokumento</li>
+                                    <li><i class="bi bi-check-circle"></i> Mga notification para sa pamamahala ng pila</li>
+                                    <li><i class="bi bi-check-circle"></i> Mga paalala sa deadline</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="bi bi-people-fill module-icon"></i>
+                                    <h4>Pamamahala ng Pila</h4>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="bi bi-check-circle"></i> Virtual na sistema ng pila</li>
+                                    <li><i class="bi bi-check-circle"></i> Real-time na status ng pila</li>
+                                    <li><i class="bi bi-check-circle"></i> Pagsusuri ng datos ng pila</li>
+                                    <li><i class="bi bi-check-circle"></i> Pamamahala ng pila ayon sa priyoridad</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="bi bi-layout-text-window module-icon"></i>
+                                    <h4>User Interface</h4>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="bi bi-check-circle"></i> Responsive na layout ng form</li>
+                                    <li><i class="bi bi-check-circle"></i> Mas maayos na detalye ng pagpaparehistro</li>
+                                    <li><i class="bi bi-check-circle"></i> Malinis na pagpapakita ng assessment</li>
+                                    <li><i class="bi bi-check-circle"></i> Mga modal at proseso para sa feedback</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3 class="mb-0">Proseso ng Enrollment ng Estudyante</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="workflow-step">
+                            <h5>1. Pagpaparehistro ng Estudyante</h5>
+                            <p>Ang mga estudyante ay lumilikha ng account at nagsusumite ng personal na impormasyon upang simulan ang proseso ng enrollment.</p>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <h5>2. Pagsusumite ng Dokumento</h5>
+                            <p>Ang mga estudyante ay nag-a-upload ng mga kinakailangang dokumento batay sa kanilang uri (bago, dating estudyante, transferee, o shifting).</p>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <h5>3. Pagtatalaga sa Pila</h5>
+                            <p>Ang mga estudyante ay itinatalaga sa isang virtual na pila para sa pagproseso ng mga student assistant at registrar.</p>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <h5>4. Pagbeberipika ng Dokumento</h5>
+                            <p>Ang mga registrar ay nagbabalidasi ng mga isinumiteng dokumento at minamarkahan ang mga ito bilang kumpleto o humihingi ng karagdagang impormasyon.</p>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <h5>5. Pagsusuri ng Aplikasyon</h5>
+                            <p>Ang mga registrar ay nagsusuri ng kumpletong aplikasyon at alinman sa nag-aapruba para sa enrollment o tumatanggi kasama ang detalyadong dahilan.</p>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <h5>6. Pagpaparehistro sa Kurso</h5>
+                            <p>Ang mga estudyante ay pumipili ng mga kurso batay sa mga pangangailangan ng kanilang programa at mga available na iskedyul.</p>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <h5>7. Pagtatasa ng Bayarin</h5>
+                            <p>Kinakalkula ng sistema ang tuition at iba pang naaangkop na bayarin batay sa mga naka-enroll na kurso at status ng estudyante.</p>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <h5>8. Pagproseso ng Bayad</h5>
+                            <p>Ang mga estudyante ay pumipili ng opsyon sa pagbabayad (buong bayad o installment) at nagsusumite ng katibayan ng pagbabayad.</p>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <h5>9. Kumpirmasyon ng Enrollment</h5>
+                            <p>Pagkatapos ng matagumpay na pagbeberipika ng bayad, kinukumpirma ang enrollment, at natatanggap ng mga estudyante ang kanilang mga iskedyul ng klase.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3 class="mb-0">Kasalukuyang Status ng Implementasyon</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="progress mb-4" style="height: 25px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75% Tapos Na</div>
+                        </div>
+                        
+                        <h4>Mga Natapos na Bahagi:</h4>
+                        <ul>
+                            <li><strong>Pag-authenticate ng User</strong> - Pag-login/pag-logout para sa lahat ng role ng user</li>
+                            <li><strong>Pagpaparehistro ng Estudyante</strong> - Pagkolekta ng personal na impormasyon at paggawa ng account</li>
+                            <li><strong>Pamamahala ng Dokumento</strong> - Pag-upload, pag-kategorya, at pagsubaybay ng status</li>
+                            <li><strong>Dashboard ng Registrar</strong> - Listahan ng estudyante, view ng detalye, at pagbabalidasi ng dokumento</li>
+                            <li><strong>Sistema ng Pila</strong> - Pagtatalaga ng virtual na pila at pagsubaybay ng status</li>
+                            <li><strong>Pagpapabuti ng UI</strong> - Pinahusay na form ng pagpaparehistro at proseso ng pagtanggi</li>
+                        </ul>
+                        
+                        <h4 class="mt-4">Kasalukuyang Ginagawa:</h4>
+                        <ul>
+                            <li><strong>Pag-iskedyul ng Klase</strong> - Pagtatalaga ng mga kurso, section, at guro</li>
+                            <li><strong>Pagtatasa ng Bayarin</strong> - Pagkalkula ng tuition at iba pang bayarin</li>
+                            <li><strong>Sistema ng Notification</strong> - Real-time na alerto para sa mga pag-update ng status</li>
+                        </ul>
+                        
+                        <h4 class="mt-4">Mga Hindi Pa Naipapatupad:</h4>
+                        <ul>
+                            <li><strong>Pagproseso ng Bayad</strong> - Pag-integrate sa mga sistema ng pagbabayad</li>
+                            <li><strong>Pag-uulat</strong> - Mga analitika at ulat para sa administrasyon</li>
+                            <li><strong>Responsiveness sa Mobile</strong> - Pag-optimize para sa lahat ng laki ng device</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="mb-0">Istraktura ng Database</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Ang sistema ay gumagamit ng relational database na may mga sumusunod na pangunahing talahanayan:</p>
+                        
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">students</h5>
+                                        <p class="card-text">Nag-iimbak ng personal at akademikong impormasyon ng estudyante</p>
+                                        <ul class="small">
+                                            <li>id (Primary Key)</li>
+                                            <li>first_name</li>
+                                            <li>last_name</li>
+                                            <li>email</li>
+                                            <li>contact</li>
+                                            <li>address</li>
+                                            <li>type (new, old, transferee, shifting)</li>
+                                            <li>course</li>
+                                            <li>year_level</li>
+                                            <li>created_at</li>
+                                            <li>updated_at</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">documents</h5>
+                                        <p class="card-text">Sumusubaybay sa mga isinumiteng dokumento ng estudyante</p>
+                                        <ul class="small">
+                                            <li>id (Primary Key)</li>
+                                            <li>student_id (Foreign Key)</li>
+                                            <li>name</li>
+                                            <li>type</li>
+                                            <li>file_path</li>
+                                            <li>status (Submitted, Pending, Missing)</li>
+                                            <li>date_submitted</li>
+                                            <li>verified_by</li>
+                                            <li>verification_date</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">enrollments</h5>
+                                        <p class="card-text">Nagtala ng mga detalye ng enrollment ng estudyante</p>
+                                        <ul class="small">
+                                            <li>id (Primary Key)</li>
+                                            <li>student_id (Foreign Key)</li>
+                                            <li>semester</li>
+                                            <li>school_year</li>
+                                            <li>section</li>
+                                            <li>date_enrolled</li>
+                                            <li>status</li>
+                                            <li>approved_by</li>
+                                            <li>approval_date</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">courses</h5>
+                                        <p class="card-text">Katalogo ng mga available na kurso</p>
+                                        <ul class="small">
+                                            <li>id (Primary Key)</li>
+                                            <li>code</li>
+                                            <li>description</li>
+                                            <li>units</li>
+                                            <li>type (Lec, Lab)</li>
+                                            <li>prerequisites</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">class_schedules</h5>
+                                        <p class="card-text">Mga iskedyul at section ng kurso</p>
+                                        <ul class="small">
+                                            <li>id (Primary Key)</li>
+                                            <li>course_id (Foreign Key)</li>
+                                            <li>section</li>
+                                            <li>days</li>
+                                            <li>start_time</li>
+                                            <li>end_time</li>
+                                            <li>room</li>
+                                            <li>instructor</li>
+                                            <li>max_students</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">fees</h5>
+                                        <p class="card-text">Impormasyon tungkol sa tuition at iba pang bayarin</p>
+                                        <ul class="small">
+                                            <li>id (Primary Key)</li>
+                                            <li>enrollment_id (Foreign Key)</li>
+                                            <li>type</li>
+                                            <li>amount</li>
+                                            <li>description</li>
+                                            <li>payment_status</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>NCST Enrollment System</h5>
+                    <p class="small">Bersyon 1.0.0 | Huling Na-update: Agosto 13, 2025</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="small">&copy; 2025 NCST. Nakalaan ang lahat ng karapatan.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

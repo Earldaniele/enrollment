@@ -1,0 +1,80 @@
+NOTE:
+make a temporary upload img for qr code on student assistant side to showcase how the qr code gets scanned
+(just to show 'completed' status)
+
+
+TO DO LATER:
+- non-approved students can only view reg form
+- 
+
+Colors:
+BLUE             - rgb(37, 52, 117)
+YELLOW           - rgb(242, 199, 0)
+YELLOW (W/ BLUE) - rgb(243, 203, 16)
+
+
+FOLDER STRUCTURE:
+- install HTML5 QR CODE via NPM ❌
+- DOUBLE CHECK NOTIFCATIONS.JS KUNG MAY PURPOSE, DEL IF WALA
+
+
+FORMS (ALL):
+- Add validation and restrictions in input fields accordingly. ❌
+- MAKE SURE TO APPLY SWEETALERT TO ALL POPUPS ❌
+
+
+STUDENT FOLDER:
+have an enrollment.php for view enrollment button when clicked. but should still have consistent design like the dahsboard.php and structure.
+
+
+=====================================
+
+for use of css it will be bootstrap, no internal css, just use custom.css for that if ever. i encourage you to reuse classes for consistency. kindly focus on these adjustments for now. thank you.
+
+=====
+
+DONE:
+
+
+- MISSING DROP DOWN SELECTION ON COURSES ✅
+ADD ALERT BOX AT THE TOP OF FORM CARD (same width, use bootstrap ONLY)✅
+register.php FORM restrictions/validations:✅
+FIRST NAME: 100 CHARACRTERS (TEXT)✅
+LAST NAME: 100 CHARACTERS (TEXT)✅
+EMAIL ADDRESS: 250 CHARACTERS (EMAIL)✅
+PHONE NUMBER: 11-12 NUMBERS ONLY (NUMBERS ONLY STRICTLY) (11 numbers are only valid if number starts with 09 and 12 numbers are only valid if number starts with 639)✅
+PASSWORD: EQUAL TO OR GREATER THAN 8 CHARACTERS✅
+CONFIRM PASSWORD: MUST BE EQUAL TO PASSWORD✅
+- TAKE OUT BOOTSTRAP, B-ICONS, SWEETALERT .MINS for EASIER ACCESS (put inside assets) ✅
+
+college-registration.php: ✅
+
+personal info: ✅
+last, first, and middle name have 100 characters max (LAST FIRST AND MIDDLE STRICTLY NO NUMBERS), and 10 characters max for suffix
+complete address 300 characters max, zip code (4 numbers only, integers only, non-negative, NO DECIMAL (dot))
+i dont know what logic to suggest for date of birth (maybe calculate age according to date now?)
+place of birth 50 max TEXT ONLY, and email address 100 max
+
+educ background: ✅
+remove educational plan, and course graduated
+year graduated 4 numbers MAX only (non negative, and integer no decimal points)
+academic achievement should have 'none' option
+
+
+work info:✅
+input fields 100 characters max NO NUMBERS STRICTLY.
+
+Other information section:✅
+shoudl only have shifting and transferee checkboxes, remove the rest
+
+
+father, mother, guardian info:✅
+have all letter inputs have 100 max characters and STRICTLY NO NUMBERS except address which has 500 max characters and can have numbers.
+
+mobile number - 11-12 phone number length with same validation as the register.php ✅
+
+move guardian occupation and guardian relationship below the guardian complete address.✅
+
+
+
+note: only have some fields able to be edited when its corresponding inputs are checked in checkbox (for e.g, when working is checked, i can edit employer, otherwise if unchecked i cannot)✅
